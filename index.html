@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADVAN TRAVEL & TOURS UG | Premium Travel Experiences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a5fb4;
+            --secondary: #ff9800;
+            --dark: #1e1e2d;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: floralwhite;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .LOGO {
+            height: 70px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .brand-name span {
+            color: orangered;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .cta-button {
+            background-color: orangered;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 80px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-left: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+/* Destinations2 Section */
+        .destinations2-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .destination2-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .destination2-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .destination2-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .destination2-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .destination2-card:hover .destination2-img img {
+            transform: scale(1.1);
+        }
+
+        .destination2-content {
+            padding: 20px;
+        }
+
+        .destination2-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .destination2-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .destination2-price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        /* Destinations Section */
+        .destinations-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .destination-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .destination-img {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .destination-img img {
+            width: 30%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .destination-card:hover .destination-img img {
+            transform: scale(1.1);
+        }
+
+        .destination-content {
+            padding: 20px;
+        }
+
+        .destination-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .destination-content p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .destination-price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form .submit-btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .contact-form .submit-btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PHOTOS PAGE STYLES ===== */
+        .photos-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1533106497176-200ae58c5b41?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 160px 0 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .photos-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .photos-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .photos-gallery {
+            padding: 60px 0 80px;
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1/1;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        .photo-overlay h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .photo-overlay p {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .photo-overlay .photo-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lightbox-nav.prev {
+            left: -70px;
+        }
+
+        .lightbox-nav.next {
+            right: -70px;
+        }
+
+        .lightbox-info {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+        }
+
+        .lightbox-info h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .lightbox-info p {
+            font-size: 15px;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 40px;
+            }
+            .section-title h2 {
+                font-size: 32px;
+            }
+            .photos-hero h1 {
+                font-size: 38px;
+            }
+            .lightbox-nav.prev {
+                left: -20px;
+            }
+            .lightbox-nav.next {
+                right: -20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .photos-hero h1 {
+                font-size: 30px;
+            }
+            .photos-hero p {
+                font-size: 17px;
+            }
+            .photos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            .lightbox-nav.prev {
+                left: -10px;
+            }
+            .lightbox-nav.next {
+                right: -10px;
+            }
+            .lightbox-info {
+                bottom: -55px;
+            }
+            .lightbox-info h3 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+            .section-title h2 {
+                font-size: 28px;
+            }
+            .about-content h2 {
+                font-size: 28px;
+            }
+            .brand-name {
+                font-size: 18px;
+            }
+            .LOGO {
+                height: 50px;
+            }
+            .cta-button {
+                padding: 8px 15px;
+                font-size: 13px;
+                margin-left: 10px;
+            }
+            .photos-hero {
+                padding: 130px 0 50px;
+            }
+            .photos-hero h1 {
+                font-size: 26px;
+            }
+            .photos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 12px;
+            }
+            .photo-overlay h3 {
+                font-size: 15px;
+            }
+            .photo-overlay p {
+                font-size: 11px;
+            }
+            .lightbox-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="navbar">
+                <div class="logo-section">
+                    <img src="logo.jpg" alt="LOGO" class="LOGO">
+                    <span class="brand-name">MADVAN <span>TOURS</span> & TRAVEL</span>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" id="navHome">Home</a></li>
+                    <li><a href="#services" id="navServices">Services</a></li>
+                    <li><a href="#destinations2" id="navDestinations2">Destinations</a></li>
+                    <li><a href="#about" id="navAbout">About</a></li>
+                    <li><a href="#testimonials" id="navTestimonials">Testimonials</a></li>
+                    <li><a href="#events" id="navEvents">Upcoming Events</a></li>
+                    <li><a href="#photos" id="navPhotos" class="active">Photos</a></li>
+                    <li><a href="#contact" id="navContact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#contact" class="cta-button">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>MADVAN TOURS & TRAVEL <br> YOUR GATEWAY TO ADVENTURE</h2>
+                <p>Experience unforgettable journeys, curated with passion and expertise. From tropical beaches to mountain peaks, we create memories that last a lifetime.</p>
+                <a href="#destinations" class="hero-button">Explore Destinations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive travel solutions tailored to your needs and preferences</p>
+            </div>
+
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="farm.jpeg" alt="Farm Tourism">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <h3>Farm Tourism & Wildlife Safaris</h3>
+                        <p>Escape to Uganda's lush green hills and experience authentic rural life! Join local farmers harvesting fresh produce, learn traditional cooking, and soak up the warm hospitality of Ugandan culture.</p>
+                        <a href="#contact" class="cta-button">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="culture.jpeg" alt="Cultural Tourism">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-drum"></i>
+                        </div>
+                        <h3>Cultural & Community Tourism</h3>
+                        <p>The Batwa people, known as the "Keepers of the Forest," have a rich culture deeply connected to the forest. Experience their traditional way of life in the Bwindi Impenetrable National Park area.</p>
+                        <a href="#contact" class="cta-button">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="HOTEL 1.jpeg" alt="Hotel Reservations">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Hotel & Travel Planning</h3>
+                        <p>Madvan Tours' hotel booking service is your ticket to a seamless Ugandan adventure. From budget-friendly options to luxury retreats, we've got you covered.</p>
+                        <a href="#contact" class="cta-button">Find Hotels</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="tour guides.jpg" alt="Tour Guides">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Professional Tour Guiding</h3>
+                        <p>Experience Uganda like no other with our expert guides. From gorilla treks in Bwindi to thrilling game drives in Queen Elizabeth, we'll show you Uganda's hidden gems.</p>
+                        <a href="#contact" class="cta-button">View Tours</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="TRAVEL.jpeg" alt="Transport Services">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <h3>Transport & Adventure</h3>
+                        <p>Travel in comfort and style with our premium transport services. From airport pickups to countryside excursions, our professional drivers ensure a seamless journey.</p>
+                        <a href="#contact" class="cta-button">Book Transport</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations2" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Destinations</h2>
+                <p>Explore our handpicked selection of breathtaking destinations in Uganda</p>
+            </div>
+
+            <div class="destinations2-container">
+                <div class="destination2-card">
+                    <div class="destination2-img">
+                        <img src="bwindi.jpg" alt="Bwindi Impenetrable National Park">
+                    </div>
+                    <div class="destination2-content">
+                        <h3>1. Bwindi Impenetrable National Park</h3>
+                        <p>Famous for mountain gorilla trekking. A UNESCO world heritage site with dense tropical rainforest. Home to nearly half of the world's remaining mountain gorillas.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 14px; margin-top: 10px; display: inline-block;">Book Trip</a>
+                    </div>
+                </div>
+
+                <div class="destination2-card">
+                    <div class="destination2-img">
+                        <img src="QUEEN 3.jpeg" alt="Queen Elizabeth National Park">
+                    </div>
+                    <div class="destination2-content">
+                        <h3>2. Queen Elizabeth National Park</h3>
+                        <p>Known for tree-climbing lions in the Ishasha sector. Boat cruises along the Kazinga Channel with hippos and birds. One of the most visited parks in Uganda.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 14px; margin-top: 10px; display: inline-block;">Book Trip</a>
+                    </div>
+                </div>
+
+                <div class="destination2-card">
+                    <div class="destination2-img">
+                        <img src="murchison-falls.jpg" alt="Murchison Falls National Park">
+                    </div>
+                    <div class="destination2-content">
+                        <h3>3. Murchison Falls National Park</h3>
+                        <p>Uganda's largest national park. Famous for the spectacular Murchison Falls where the Nile squeezes through a narrow gorge. Popular for game drives and boat safaris.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 14px; margin-top: 10px; display: inline-block;">Book Trip</a>
+                    </div>
+                </div>
+
+                <div class="destination2-card">
+                    <div class="destination2-img">
+                        <img src="rwenzori 2.jpg" alt="Rwenzori Mountains National Park">
+                    </div>
+                    <div class="destination2-content">
+                        <h3>4. Rwenzori Mountains National Park</h3>
+                        <p>Known as the "Mountains of the Moon." A UNESCO World Heritage Site famous for mountaineering and glacier trekking.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 14px; margin-top: 10px; display: inline-block;">Book Trip</a>
+                    </div>
+                </div>
+
+                <div class="destination2-card">
+                    <div class="destination2-img">
+                        <img src="elgon.jpg" alt="Mount Elgon National Park">
+                    </div>
+                    <div class="destination2-content">
+                        <h3>5. Mount Elgon National Park</h3>
+                        <p>Ideal for hiking and nature exploration. Features caves, waterfalls, and unique vegetation.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 14px; margin-top: 10px; display: inline-block;">Book Trip</a>
+                    </div>
+                </div>
+
+                <div class="destination2-card">
+                    <div class="destination2-img">
+                        <img src="nile.jpg" alt="Jinja - Source of the Nile">
+                    </div>
+                    <div class="destination2-content">
+                        <h3>6. Jinja - Source of the Nile</h3>
+                        <p>Known as the Adventure Capital of East Africa. Located at the source of the River Nile. Famous for white-water rafting, kayaking, and bungee jumping.</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 14px; margin-top: 10px; display: inline-block;">Book Trip</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section id="events" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+                <p>We are so pleased to let you know that our upcoming events shall be posted here always.<br> Let's all come and discover the beauty of Uganda.</p>
+            </div>
+
+            <div class="destinations-container">
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="new flyer.jpeg" alt="Bwindi Impenetrable National Park">
+                    </div>
+                    <div class="destination-content">
+                        <h3>1. Tulambule Kyegegwa</h3>
+                        <p>Kyegegwa is calling. Are you coming</p>
+                        <a href="#contact" class="cta-button" style="padding: 8px 20px; font-size: 14px; margin-top: 10px; display: inline-block;">Book Trip</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PHOTOS PAGE SECTION ===== -->
+    <section id="photos" class="photos-gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Photo Gallery</h2>
+                <p>Capturing the beauty, culture, and wildlife of Uganda through our lens</p>
+            </div>
+
+            <div class="photos-grid" id="photosGrid">
+                <!-- Photo 1 -->
+                <div class="photo-item" data-title="Gorilla Trekking" data-location="Bwindi Impenetrable Forest">
+                    <img src="GORILLA.jpeg" alt="Gorilla Trekking in Bwindi">
+                    <div class="photo-overlay">
+                        <h3>Gorrillas</h3>
+                        <p>Bwindi Impenetrable Forest</p>
+                        <span class="photo-tag">Wildlife</span>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="photo-item" data-title="Tree-Climbing Lions" data-location="Queen Elizabeth NP">
+                    <img src="QUEEN 3.jpeg" alt="Tree-Climbing Lions">
+                    <div class="photo-overlay">
+                        <h3>Tree-Climbing Lions</h3>
+                        <p>Queen Elizabeth National Park</p>
+                        <span class="photo-tag">Wildlife</span>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="photo-item" data-title="Murchison Falls" data-location="Murchison Falls NP">
+                    <img src="semiliki.jpeg" alt="Murchison Falls">
+                    <div class="photo-overlay">
+                        <h3>Semaliki </h3>
+                        <p>Semiliki is one of the intresting tourism place. </p>
+                        <span class="photo-tag">Life Story</span>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="photo-item" data-title="Rwenzori Mountains" data-location="Rwenzori NP">
+                    <img src="rwenzori 2.jpg" alt="Rwenzori Mountains">
+                    <div class="photo-overlay">
+                        <h3>Rwenzori Mountains</h3>
+                        <p>Mountains of the Moon</p>
+                        <span class="photo-tag">Landscape</span>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="photo-item" data-title="Mount Elgon" data-location="Mount Elgon NP">
+                    <img src="elgon.jpg" alt="Mount Elgon">
+                    <div class="photo-overlay">
+                        <h3>Mount Elgon</h3>
+                        <p>Mount Elgon National Park</p>
+                        <span class="photo-tag">Adventure</span>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="photo-item" data-title="Source of the Nile" data-location="Jinja, Uganda">
+                    <img src="nile.jpg" alt="Source of the Nile">
+                    <div class="photo-overlay">
+                        <h3>Source of the Nile</h3>
+                        <p>Jinja, Uganda</p>
+                        <span class="photo-tag">Adventure</span>
+                    </div>
+                </div>
+
+                <!-- Photo 7 -->
+                <div class="photo-item" data-title="Farm Tourism" data-location="Uganda Countryside">
+                    <img src="farm.jpeg" alt="Farm Tourism">
+                    <div class="photo-overlay">
+                        <h3>Farm Tourism</h3>
+                        <p>Uganda Countryside</p>
+                        <span class="photo-tag">Culture</span>
+                    </div>
+                </div>
+
+                <!-- Photo 8 -->
+                <div class="photo-item" data-title="Cultural Experience" data-location="Uganda">
+                    <img src="culture.jpeg" alt="Cultural Experience">
+                    <div class="photo-overlay">
+                        <h3>Cultural Experience</h3>
+                        <p>Uganda</p>
+                        <span class="photo-tag">Culture</span>
+                    </div>
+                </div>
+
+                <!-- Photo 9 -->
+                <div class="photo-item" data-title="Luxury Accommodation" data-location="Uganda">
+                    <img src="MAP.jpeg" alt="Luxury Accommodation">
+                    <div class="photo-overlay">
+                        <h3>Map showing various Parks</h3>
+                        <p>Uganda</p>
+                        <span class="photo-tag">Uganda Map</span>
+                    </div>
+                </div>
+
+                <!-- Photo 10 -->
+                <div class="photo-item" data-title="Professional Guides" data-location="Uganda">
+                    <img src="tour guides.jpg" alt="Professional Tour Guides">
+                    <div class="photo-overlay">
+                        <h3>Professional Guides</h3>
+                        <p>Uganda</p>
+                        <span class="photo-tag">Proffessionals</span>
+                    </div>
+                </div>
+
+                <!-- Photo 11 -->
+                <div class="photo-item" data-title="Travel Experience" data-location="Uganda">
+                    <img src="TRAVEL.jpeg" alt="Travel Experience">
+                    <div class="photo-overlay">
+                        <h3>Travel Experience</h3>
+                        <p>Uganda</p>
+                        <span class="photo-tag">Adventure</span>
+                    </div>
+                </div>
+
+                <!-- Photo 12 -->
+                <div class="photo-item" data-title="CEO - MADVAN Tours" data-location="Uganda">
+                    <img src="C.E.O.jpeg" alt="CEO - MADVAN Tours">
+                    <div class="photo-overlay">
+                        <h3>CEO - MADVAN Tours & Travel</h3>
+                        <p>Uganda</p>
+                        <span class="photo-tag">C.E.O</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+            <button class="lightbox-nav prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle">Title</h3>
+                <p id="lightboxLocation">Location</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="C.E.O.jpeg" alt="About MADVAN Travel"><br>
+                </div>
+                <div class="about-content">
+                    <h2>About MADVAN TRAVEL & TOURS UG</h2>
+                    <p>Founded with a passion for exploration and cultural exchange, MADVAN TRAVEL & TOURS UG has been creating unforgettable travel experiences for over 15 years.</p>
+                    <p>MADVAN TOURS AND TRAVEL is a professional tour operating company dedicated to providing memorable travel experiences across Uganda and the wider East Africa region. The company specializes in organizing well-planned safaris, guided tours, and travel services that enable visitors to explore the region's rich wildlife, breathtaking landscapes, diverse cultures, and unique attractions.</p>
+                    <p>Our team is committed to delivering reliable, safe, and enjoyable travel experiences through professional tour guiding, carefully designed itineraries, and quality customer service. Whether it is a wildlife safari, cultural tour, adventure trip, educational visit, or leisure travel, every journey is organized with attention to detail to ensure a rewarding experience.</p>
+
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h4>Award-Winning Service</h4>
+                                <p>Recognized for excellence in customer service and innovative travel solutions.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <div>
+                                <h4>Global Network</h4>
+                                <p>Partnerships with trusted providers in over 50 countries worldwide.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div>
+                                <h4>Travel with Confidence</h4>
+                                <p>Comprehensive support and 24/7 assistance throughout your journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Travelers Say</h2>
+                <p>Hear from our satisfied customers about their experiences with MADVAN TRAVEL</p>
+            </div>
+
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "Visiting Source of the Nile was truly special — standing at the point where the great Nile begins felt both peaceful and powerful. I also enjoyed the rich history at the Uganda Railway Museum, where I learned so much about the country's railway heritage. The trip to Busowoko Falls was equally amazing, with its roaring waters and scenic surroundings making it a perfect spot to relax and take in nature. The entire tour was well organized, and the experience was made even better by the professionalism of MADVAN Tours and Travel."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="traveller 4.jpeg" alt="Nabaasa Sonia">
+                        </div>
+                        <div class="author-info">
+                            <h4>Nabaasa Sonia</h4>
+                            <p>Source Of The Nile Tour</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "Visiting Sipi Falls and Mount Elgon was one of the most incredible experiences of my trip to Uganda. The views are absolutely breathtaking — lush green landscapes, dramatic cliffs, and the stunning waterfalls create a magical atmosphere. I organized my trip with MADVAN Tours and Travel, and everything was seamless and well planned, from transportation to the hiking schedule. The guides were friendly, professional, and very knowledgeable, making the hike safe, engaging, and truly memorable."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="traveller 2.jpeg" alt="Byomuhangi Devis">
+                        </div>
+                        <div class="author-info">
+                            <h4>Byomuhangi Devis</h4>
+                            <p>Mount Elgon Hike</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch to start planning your next adventure</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to explore the world? Contact our travel experts today for personalized assistance with your next journey.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Our Address</h4>
+                                <p>BUGULI T/C, KAMWENGE, UGANDA</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+256 789093995 | +256 741106990<br>+256 791939862 | +256 766927063</p>
+                            </div>
+                        </div>
+
+                          <label>
+                    </div>
+
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/Madvan tours and travel"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/Madvan tours and travel"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    Your email:
+                        <input type="email" name="email">
+                    </label>
+                    <label>
+                        Your message:
+                        <textarea name="message"></textarea>
+                    </label>
+                    <!-- your other form fields go here -->
+                    <button type="submit">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>MADVAN TOURS & TRAVEL</h3>
+                    <p>Your Gateway to Adventure</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#photos">Photo Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Farm Tourism</a></li>
+                        <li><a href="#services">Cultural Tours</a></li>
+                        <li><a href="#services">Hotel Reservations</a></li>
+                        <li><a href="#services">Tour Guiding</a></li>
+                        <li><a href="#services">Transport Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> BUGULI T/C, KAMWENGE</li>
+                        <li><i class="fas fa-phone"></i> +256 789093995 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +256 791939862  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+256 766927063</li>
+                        <li><i class="fas fa-envelope"></i> madvantours@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sun: 8AM-7PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 MADVAN TRAVEL & TOURS UG. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #ff9800;"></i> for travelers by Andriz Tech Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // =============================================
+        // MOBILE MENU TOGGLE
+        // =============================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // =============================================
+        // SMOOTH SCROLLING
+        // =============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // =============================================
+        // ACTIVE NAV LINK HIGHLIGHT
+        // =============================================
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // =============================================
+        // CONTACT FORM
+        // =============================================
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = this.querySelector('input[name="name"]').value;
+                const email = this.querySelector('input[name="email"]').value;
+                alert(`Thank you ${name}! Your message has been received. We'll contact you at ${email} soon.`);
+                this.reset();
+            });
+        }
+
+        // =============================================
+        // HEADER SCROLL EFFECT
+        // =============================================
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // =============================================
+        // PHOTO GALLERY LIGHTBOX
+        // =============================================
+        const photoItems = document.querySelectorAll('.photo-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxLocation = document.getElementById('lightboxLocation');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        let currentPhotoIndex = 0;
+        let visiblePhotos = [];
+
+        // Get all visible photos (filtered if any)
+        function getVisiblePhotos() {
+            return Array.from(photoItems).filter(item => item.style.display !== 'none');
+        }
+
+        // Open lightbox
+        function openLightbox(index) {
+            visiblePhotos = getVisiblePhotos();
+            if (visiblePhotos.length === 0) return;
+            currentPhotoIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Update lightbox content
+        function updateLightbox() {
+            if (visiblePhotos.length === 0) return;
+            const item = visiblePhotos[currentPhotoIndex];
+            const img = item.querySelector('img');
+            const title = item.getAttribute('data-title') || 'MADVAN Tours';
+            const location = item.getAttribute('data-location') || 'Uganda';
+
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxTitle.textContent = title;
+            lightboxLocation.textContent = location;
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Navigate to previous photo
+        function prevPhoto() {
+            if (visiblePhotos.length === 0) return;
+            currentPhotoIndex = (currentPhotoIndex - 1 + visiblePhotos.length) % visiblePhotos.length;
+            updateLightbox();
+        }
+
+        // Navigate to next photo
+        function nextPhoto() {
+            if (visiblePhotos.length === 0) return;
+            currentPhotoIndex = (currentPhotoIndex + 1) % visiblePhotos.length;
+            updateLightbox();
+        }
+
+        // Add click events to photo items
+        photoItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                if (item.style.display !== 'none') {
+                    const visible = getVisiblePhotos();
+                    const visibleIndex = visible.indexOf(item);
+                    if (visibleIndex !== -1) {
+                        openLightbox(visibleIndex);
+                    }
+                }
+            });
+        });
+
+        // Lightbox controls
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', prevPhoto);
+        lightboxNext.addEventListener('click', nextPhoto);
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft' && lightbox.classList.contains('active')) prevPhoto();
+            if (e.key === 'ArrowRight' && lightbox.classList.contains('active')) nextPhoto();
+        });
+
+        // Close lightbox when clicking outside
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        console.log('MADVAN TRAVEL & TOURS UG - Your Gateway to Adventure!');
+    </script>
+</body>
+</html>
